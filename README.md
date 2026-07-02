@@ -58,3 +58,5 @@ cruft update    # apply template changes (review the diff before committing)
 A scheduled GitHub Actions workflow (`.github/workflows/cruft-update.yml`) opens
 a pull request automatically when the template moves ahead. The `cruft` pre-commit
 hook also fails locally if the project drifts from the template.
+
+Update Readme
