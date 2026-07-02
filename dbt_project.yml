@@ -1,0 +1,37 @@
+name: 'cruft_test_3'
+version: '1.0.0'
+config-version: 2
+
+# dbt requires a profile name here, but on the dbt platform the connection and
+# credentials come from the environment configured in the platform UI, so this
+# value is effectively a placeholder. No profiles.yml lives in the repo.
+profile: 'cruft_test_3'
+
+require-dbt-version: ">=1.7,<2.0"
+
+# These configurations specify where dbt should look for different types of files.
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Configuring models
+# Full documentation: https://docs.getdbt.com/docs/configuring-models
+models:
+  cruft_test_3:
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts
+
+seeds:
+  cruft_test_3:
+    +schema: seeds

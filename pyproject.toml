@@ -1,0 +1,13 @@
+[tool.cruft]
+skip = [
+    "models",
+    "seeds",
+    "snapshots",
+    "tests",
+    "analyses",
+    "packages.yml",
+    "README.md",
+    "target",
+    "dbt_packages",
+    "logs"
+]

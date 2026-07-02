@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: customers
+    description: >
+      Customer dimension enriched with order history. One row per customer.
+    columns:
+      - name: customer_id
+        description: Primary key for the customer.
+        data_tests:
+          - unique
+          - not_null
+      - name: number_of_orders
+        description: Total count of orders placed by the customer.
+        data_tests:
+          - not_null
+      - name: lifetime_value
+        description: Sum of order amounts across all of the customer's orders.

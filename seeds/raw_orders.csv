@@ -1,0 +1,16 @@
+id,customer_id,order_date,status,amount
+1,1,2024-01-01,completed,30
+2,1,2024-01-03,completed,20
+3,2,2024-01-05,completed,18
+4,3,2024-01-06,returned,12
+5,3,2024-01-09,completed,42
+6,4,2024-01-11,completed,25
+7,5,2024-01-12,placed,55
+8,6,2024-01-14,completed,17
+9,7,2024-01-15,completed,33
+10,7,2024-01-18,returned,40
+11,8,2024-01-20,completed,28
+12,9,2024-01-22,placed,15
+13,1,2024-01-25,completed,50
+14,3,2024-01-26,completed,22
+15,5,2024-01-28,completed,19

@@ -1,0 +1,16 @@
+repos:
+  # Keep this project in sync with the dbt template it was generated from.
+  # `cruft` fails the commit if the project has drifted from the template,
+  # so template updates are caught early. Run `cruft update` to pull them in.
+  - repo: https://github.com/cruft/cruft
+    rev: 2.15.0
+    hooks:
+      - id: cruft
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-merge-conflict

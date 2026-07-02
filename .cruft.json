@@ -1,0 +1,20 @@
+{
+  "template": "git@gh-me:emmahunt/dbt-template-cruft.git",
+  "commit": "52280f7e0f98165a787314a681da3449e7075e47",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "project_name": "cruft_test_3",
+      "project_slug": "cruft_test_3",
+      "profile_name": "cruft_test_3",
+      "project_description": "A dbt project.",
+      "author": "emma",
+      "warehouse": "snowflake",
+      "dbt_version": ">=1.7,<2.0",
+      "include_dbt_utils": "yes",
+      "_template": "git@gh-me:emmahunt/dbt-template-cruft.git",
+      "_commit": "52280f7e0f98165a787314a681da3449e7075e47"
+    }
+  },
+  "directory": null
+}

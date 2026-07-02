@@ -1,0 +1,30 @@
+version: 2
+
+seeds:
+  - name: raw_customers
+    description: >
+      Example raw customer data shipped with the template so the project runs
+      end to end with no external warehouse data. Replace with real sources.
+    columns:
+      - name: id
+        description: Primary key for the customer.
+        data_tests:
+          - unique
+          - not_null
+
+  - name: raw_orders
+    description: >
+      Example raw order data shipped with the template. One row per order.
+    columns:
+      - name: id
+        description: Primary key for the order.
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: Foreign key to raw_customers.id.
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('raw_customers')
+              field: id

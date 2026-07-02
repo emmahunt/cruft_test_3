@@ -1,0 +1,52 @@
+name: Update from template
+
+# Checks the upstream dbt template for changes and opens a pull request that
+# applies them via `cruft update`. Runs weekly and on demand.
+on:
+  schedule:
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+
+jobs:
+  cruft-update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install cruft
+        run: pip install cruft
+
+      - name: Check if the project is up to date
+        id: check
+        run: |
+          if cruft check; then
+            echo "needs_update=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "needs_update=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Apply template updates
+        if: steps.check.outputs.needs_update == 'true'
+        run: cruft update --skip-apply-ask --refresh-private-variables
+
+      - name: Open pull request
+        if: steps.check.outputs.needs_update == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: chore/cruft-update
+          title: "chore: update from dbt template"
+          commit-message: "chore: update from dbt template via cruft"
+          body: |
+            Automated update pulled from the upstream dbt template with `cruft update`.
+
+            Review the diff carefully — resolve any `.rej` files committed by cruft
+            before merging.
+          labels: template-update
