@@ -1,5 +1,5 @@
 {
-  "template": "git@gh-me:emmahunt/dbt-template-cruft.git",
+  "template": "git@github.com:emmahunt/dbt-template-cruft.git",
   "commit": "7935921b328096eda8220f9c3d33cd24ebeeb1e1",
   "checkout": null,
   "context": {
@@ -12,7 +12,7 @@
       "warehouse": "snowflake",
       "dbt_version": ">=1.7,<2.0",
       "include_dbt_utils": "yes",
-      "_template": "git@gh-me:emmahunt/dbt-template-cruft.git",
+      "_template": "git@github.com:emmahunt/dbt-template-cruft.git",
       "_commit": "7935921b328096eda8220f9c3d33cd24ebeeb1e1"
     }
   },
