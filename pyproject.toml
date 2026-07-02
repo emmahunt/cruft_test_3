@@ -6,7 +6,6 @@ skip = [
     "tests",
     "analyses",
     "packages.yml",
-    "README.md",
     "target",
     "dbt_packages",
     "logs"
