@@ -28,11 +28,11 @@ models:
     staging:
       +materialized: view
       +schema: staging
-      +config:
-        +tags: staging
     marts:
       +materialized: table
       +schema: marts
+      +config:
+        +tags: marts
 
 seeds:
   cruft_test_3:
