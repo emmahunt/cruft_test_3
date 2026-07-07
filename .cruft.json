@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/emmahunt/dbt-template-cruft.git",
-  "commit": "1b35b1217c43c3cb4ae6787199ec2a7413b8b295",
+  "commit": "fadf0097bc472be880c4054d268244064c537abf",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -13,7 +13,7 @@
       "dbt_version": ">=1.7,<2.0",
       "include_dbt_utils": "yes",
       "_template": "https://github.com/emmahunt/dbt-template-cruft.git",
-      "_commit": "1b35b1217c43c3cb4ae6787199ec2a7413b8b295"
+      "_commit": "fadf0097bc472be880c4054d268244064c537abf"
     }
   },
   "directory": null
